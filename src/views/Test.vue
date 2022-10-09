@@ -1,0 +1,1187 @@
+<template>
+    <div>
+
+        <body _c_t_common="1">
+
+            <!-- Audio, with its own HTML control. Thanks to https://www.w3.org/wiki/HTML/Elements/audio -->
+
+            <audio id="cat-menu" src="sounds/cat-menu.mp3"></audio>
+            <audio id="cat-angry" src="sounds/cat-angry.mp3" __idm_id__="2310145"></audio>
+
+            <audio id="cat-clean" src="sounds/cat-clean.mp3"></audio>
+            <!-- <audio id="cat-different2" src="sounds/cat-different2.mp3"></audio> -->
+            <audio id="cat" src="sounds/cat-meow.mp3"></audio>
+
+            <audio id="keyboard" src="sounds/click.mp3"></audio>
+
+
+
+
+
+
+
+            <!-- Thanks to Paul Becker for the code: https://stackoverflow.com/questions/50490304/audio-autoplay-not-working-in-chrome	 -->
+            <script>
+                document.addEventListener('touchstart', keyPlay);
+                document.addEventListener('click', keyPlay);
+                document.addEventListener('keydown', keyPlay);
+                function keyPlay() {
+                    document.getElementById('keyboard').play();
+                }
+            </script>
+
+
+
+            <i id="logo" class="fa fa-paw wobble-hor-bottom jello-horizontal" tabindex="0"
+                onclick="document.getElementById(&#39;cat-menu&#39;).play(); document.getElementsByTagName(&#39;nav&#39;)[0].className = &#39;menu menu_active&#39;;"></i>
+
+            <!-- MENU -->
+
+            <!-- <h3 onclick="document.getElementsByTagName('nav')[0].className = 'menu menu_active'">&lt;menu/&gt;</h3> -->
+            <nav class="menu">
+                <p onclick="document.getElementsByTagName(&#39;nav&#39;)[0].className = &#39;menu&#39;">&lt;close/&gt;
+                </p>
+                <ol>
+                    <li class="menu-item"><a href="https://hostrider.com/#0" style="cursor: default; color: #efc371;">I
+                            love<br>to code because</a></li>
+                    <!-- <li class="menu-item"><a href="#0">To code</a></li> -->
+                    <li class="menu-item">
+                        <!-- <a href="#0">to code because</a> -->
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="https://hostrider.com/#0"
+                                    onclick="document.getElementById(&#39;cat-clean&#39;).play();">It is fun</a></li>
+                            <li class="menu-item"><a href="https://hostrider.com/#0"
+                                    onclick="document.getElementById(&#39;cat-menu&#39;).play();">It is usable art</a>
+                            </li>
+                            <li class="menu-item"><a href="https://hostrider.com/#0"
+                                    onclick="document.getElementById(&#39;cat&#39;).play();">It makes me meow</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://hostrider.com/#0" style="cursor: default; color: #b5bc67;">I want to be a
+                            part</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="https://hipstersound.com/ambience.html" target="_blank"
+                                    onclick="document.getElementById(&#39;cat-menu&#39;).play();">of a passionate
+                                    community</a></li>
+                            <!-- <li class="menu-item"><a href="#0" onclick="document.getElementById('cat-menu').play();">of a passionate community</a></li> -->
+                            <!-- <li class="menu-item"><a href="#0">community</a></li> -->
+                            <!-- <li class="menu-item"><a href="#0">Summer kabobs</a></li> -->
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="https://hostrider.com/credits.html" target="_blank"
+                            onclick="document.getElementById(&#39;cat-menu&#39;).play();">Credits</a></li>
+                </ol>
+            </nav>
+
+
+            <!-- toggle -->
+            <p id="texty" style="display: none;">I'm your co-worker meow!</p>
+            <div id="app" class="togg astonishment"
+                onclick="document.getElementById(&#39;cat-angry&#39;).play(); aud_play_pause();">
+                <main class="Main" style="background-color: rgb(26, 30, 45);">
+                    <form class="Form">
+                        <div class="Toggle" style="pointer-events: all;"><svg viewBox="0 0 120 48"
+                                style="transform: translate(0px, 0px);">
+                                <path class="st0 base"
+                                    d="M96,48H24C10.7,48,0,37.3,0,24v0C0,10.7,10.7,0,24,0l72,0c13.3,0,24,10.7,24,24v0 C120,37.3,109.3,48,96,48z"
+                                    style="fill: rgb(154, 223, 144);"></path>
+                                <g class="in">
+                                    <g class="circle">
+                                        <path class="st1 seq-0"
+                                            d="M24.8,42.2c-9.9,0-18-8.1-18-18s8.1-18,18-18s18,8.1,18,18S34.7,42.2,24.8,42.2z"
+                                            data-svg-origin="94.9000015258789 24.200000762939453"
+                                            style="transform-origin: 0px 0px;" transform="matrix(1,0,0,1,3,0)"
+                                            data-original="M24.8,42.2c-9.9,0-18-8.1-18-18s8.1-18,18-18s18,8.1,18,18S34.7,42.2,24.8,42.2z">
+                                        </path>
+                                        <path class="st1 seq-1 hide"
+                                            d="M24.6,42.6c-9.8-1.8-18.8-8.1-18-18c1.3-16.4,8.1-16.7,18-18C44,4,47.1,15.8,47.1,25.8 S34.6,44.5,24.6,42.6z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-2 hide"
+                                            d="M21.6,21.7c-2-0.3-3.9-1.2-5.1-2.8c-1.2-1.7-1.8-4,1.1-6.3c5.7-4.6,20.2-7.5,33.3-4.9 s15.3,16.1,13.6,21.2S55,43.4,43.2,42.4s-13.4-1-16.1-3.8s-0.8-7.3,2.1-10.1C31.7,25.9,26.3,22.4,21.6,21.7z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-3 hide"
+                                            d="M15,19.5c0,0,0.8-4.3,8.8-6.6c2.3-0.7,5.4-1.4,8.8-2.2c8.6-2,19-4,23.5-4 c6.2,0,22.9-0.8,28.5,7.5s4.7,17.4-0.8,22.7c-5.4,5.3-16.2,7.3-28.9,5.1c0,0-5.4-2.3-7.1-8.1c-1.7-5.7-2.8-5.7-6.4-5.2 c-3.6,0.5-9-0.1-9.7-2.9c-0.7-2.8-4.4-4.9-9.4-4.5C17.4,21.8,15.2,22,15,19.5z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-4 hide"
+                                            d="M53.5,22.2c-2-0.3-3.9-1.2-5.1-2.8c-1.2-1.7-1.8-4,1.1-6.3c5.7-4.6,20.2-7.5,33.3-4.9 s15.3,16.1,13.6,21.2c-1.6,5.2-9.6,14.5-21.3,13.5s-13.4-1-16.1-3.8s-0.8-7.3,2.1-10.1C63.7,26.4,58.3,22.9,53.5,22.2z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-5 hide"
+                                            d="M72.6,25.8c0-9.9,3.1-21.8,22.6-19.1c9.9,1.3,16.7,1.6,18,18c0.8,9.9-8.2,16.2-18,18 C85.1,44.5,72.6,35.7,72.6,25.8z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-6 hide"
+                                            d="M76.9,24.2c0-9.9,8.1-18,18-18s18,8.1,18,18s-8.1,18-18,18S76.9,34.2,76.9,24.2z"
+                                            style="opacity: 0;"></path>
+                                    </g>
+                                </g>
+                                <g class="out">
+                                    <g class="circle">
+                                        <path class="st1 seq-0 hide"
+                                            d="M76.9,24.5c0-9.9,8.1-18,18-18s18,8.1,18,18s-8.1,18-18,18S76.9,34.4,76.9,24.5z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-1 hide"
+                                            d="M72.6,26c0-9.9,3.1-21.8,22.6-19.1c9.9,1.3,16.7,1.6,18,18c0.8,9.9-8.2,16.2-18,18 C85.1,44.8,72.6,36,72.6,26z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-2 hide"
+                                            d="M90.4,28.7c2.9,2.9,4.7,7.3,2.1,10.1c-2.6,2.9-4.3,2.9-16.1,3.8s-19.7-8.4-21.3-13.5 s0.5-18.7,13.6-21.2s27.6,0.3,33.3,4.9c2.9,2.3,2.4,4.6,1.1,6.3c-1.2,1.6-3.1,2.6-5.1,2.8C93.4,22.7,87.9,26.2,90.4,28.7z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-3 hide"
+                                            d="M97.4,21.7c-4.9-0.4-8.7,1.7-9.4,4.5c-0.7,2.8-6.1,3.4-9.7,2.9c-3.6-0.5-4.6-0.6-6.4,5.2 s-7.1,8.1-7.1,8.1c-12.7,2.2-23.5,0.2-28.9-5.1s-6.4-14.4-0.8-22.7S57.4,7,63.6,7c4.4,0,14.9,2,23.5,4c3.4,0.8,6.5,1.6,8.8,2.2 c8,2.3,8.8,6.6,8.8,6.6C104.5,22.3,102.3,22.1,97.4,21.7z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-4 hide"
+                                            d="M58.5,29.2c2.9,2.9,4.7,7.3,2.1,10.1c-2.6,2.9-4.3,2.9-16.1,3.8c-11.8,1-19.7-8.4-21.3-13.5 c-1.6-5.2,0.5-18.7,13.6-21.2s27.6,0.3,33.3,4.9c2.9,2.3,2.4,4.6,1.1,6.3c-1.2,1.6-3.1,2.6-5.1,2.8C61.4,23.1,56,26.7,58.5,29.2z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-5 hide"
+                                            d="M24.6,42.9c-9.8-1.8-18.8-8.1-18-18c1.3-16.4,8.1-16.7,18-18C44,4.3,47.1,16.1,47.1,26 S34.6,44.8,24.6,42.9z"
+                                            style="opacity: 0;"></path>
+                                        <path class="st1 seq-6 hide"
+                                            d="M24.8,42.5c-9.9,0-18-8.1-18-18s8.1-18,18-18s18,8.1,18,18S34.7,42.5,24.8,42.5z"
+                                            style="opacity: 0;"></path>
+                                    </g>
+                                </g>
+                            </svg></div>
+                    </form>
+                </main>
+            </div>
+
+
+
+            <div class="container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 783.55 354.91"
+                    style="transform: translate(0px, 0px);">
+                    <g id="bongo-cat">
+                        <g class="head">
+                            <path
+                                d="M280.4,221l383.8,62.6a171.4,171.4,0,0,0-9.2-40.5,174,174,0,0,0-28.7-50.5,163.3,163.3,0,0,0,3.2-73.8c-11.6-1.9-42,14.2-44.5,17.5-19.6-24-88.5-52.7-153.7-48.1A78.8,78.8,0,0,0,398,67.1c-9.8,2.9-19,29.7-19.4,33.7a320,320,0,0,0-31.7,23.6c-14,11.8-28.9,24.4-42.5,44.3A173,173,0,0,0,280.4,221Z">
+                            </path>
+                            <path
+                                d="M396.6,178.6c.4.9,2.7,6.5,8.5,8.4s13.4-1.2,17.2-7.9c-.9,7.5,3.8,14.3,10.4,16a14.4,14.4,0,0,0,15-5.7">
+                            </path>
+                            <path class="left-eye"
+                                d="M474,179.2a6.6,6.6,0,0,0-4.9,3.6,6,6,0,0,0,1.5,7.3,6,6,0,0,0,7.9-1c2.3-2.6,2-7,.2-8s-5.9,1.6-5.7,3.5,1.9,2.8,3.2,2.3,1.1-2.2,1.1-2.3">
+                            </path>
+                            <path class="right-eye"
+                                d="M368.4,165.9c0,.3-.8,3.6,1.5,6a5.9,5.9,0,0,0,7.2,1.4,6.1,6.1,0,0,0,2.2-7.7c-1.5-3.1-5.7-4.5-7.3-3.2s-.8,6,1,6.6,3.3-.7,3.3-2.1-1.5-1.8-1.6-1.9">
+                            </path>
+                            <g class="headphone headphone-right">
+                                <g class="speaker">
+                                    <path
+                                        d="M400.7,80.2c-14.1-20.8-40.2.3-50.7,15-8.7,12.2-9.7,30.3,2.8,37.3,5.4-9,11.8-15.6,21-26.2A214.1,214.1,0,0,1,400.7,80.2Z">
+                                    </path>
+                                    <path
+                                        d="M381.5,79.4c-6.6-7.5-9.6-5.8-12.3-5.5-16.3,1.3-32,20.3-27.8,33.9a21.8,21.8,0,0,0,5.9,8.5c1.7-2.6,3.5-5.1,5.4-7.7A150.7,150.7,0,0,1,381.5,79.4Z">
+                                    </path>
+                                    <path
+                                        d="M367.3,77.8a13.1,13.1,0,0,0-5.1-1.8c-8.5-.9-18.7,7.5-18.4,16.1a12.8,12.8,0,0,0,2.6,7c3.1-3.3,6.3-6.8,9.6-10.2S363.6,81.3,367.3,77.8Z">
+                                    </path>
+                                </g>
+                                <path class="band" d="M515,40.6c-15.9-4.6-57-14.1-104,2.3a166.9,166.9,0,0,0-60.9,37.3">
+                                </path>
+                            </g>
+                        </g>
+                        <g class="music music-right">
+                            <g class="note" data-svg-origin="350.79998779296875 46.5"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(165, 234, 155);"
+                                transform="matrix(0,0,0,0,368.79999,46.5)">
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="332.5986633300781 43.5"
+                                style="transform-origin: 0px 0px; opacity: 0.7099; visibility: inherit; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0.28668,0.04439,-0.04439,0.28668,233.12504,-44.36863)">
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="337.4986267089844 34.599998474121094"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(255, 204, 129);"
+                                transform="matrix(0,0,0,0,357.49863,34.6)">
+                                <polyline points="388.2 73.6 388.2 34.6 354.9 42.6 354.9 82.4"></polyline>
+                                <path
+                                    d="M388.2,74.1c0-3-4.4-5.6-8.1-5.8s-9.2,2.8-9.1,6,4.6,5.6,8.6,5.6S388.2,77.3,388.2,74.1Z">
+                                </path>
+                                <path
+                                    d="M354.9,81.9c0-3.1-4.4-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S354.9,85.1,354.9,81.9Z">
+                                </path>
+                                <line x1="354.9" y1="48.4" x2="388.2" y2="40.3"></line>
+                                <line x1="354.9" y1="54.6" x2="388.2" y2="47"></line>
+                            </g>
+                            <g class="note" data-svg-origin="354.29864501953125 33.29999923706055"
+                                style="transform-origin: 0px 0px; opacity: 0.5604; visibility: inherit; stroke: rgb(255, 204, 129);"
+                                transform="matrix(0.39766,0.18739,-0.18739,0.39766,252.31023,-138.2136)">
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="350.79998779296875 46.5"
+                                style="transform-origin: 0px 0px; opacity: 0.9649; visibility: inherit; stroke: rgb(126, 209, 226);"
+                                transform="matrix(0.03508,0.00104,-0.00104,0.03508,328.96098,37.15965)">
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="350.79998779296875 46.5"
+                                style="transform-origin: 0px 0px; opacity: 0.0581; visibility: inherit; stroke: rgb(253, 124, 110);"
+                                transform="matrix(0.93323,0.1275,-0.1275,0.93323,63.62007,-238.47509)">
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M368.5,46.5c.5,2.1,1.2,3.5,3.8,6.3s5.1,4.3,6.5,7.2a11.1,11.1,0,0,1,.7,2,10.5,10.5,0,0,1-.7,6.5">
+                                    </path>
+                                    <path
+                                        d="M368.5,46.5a20.8,20.8,0,0,0,2.4,11.7c2.3,4.4,5,5.4,6.8,9.5a17.5,17.5,0,0,1,.4,11">
+                                    </path>
+                                    <line x1="368.5" y1="47.7" x2="368.5" y2="92.8"></line>
+                                    <path
+                                        d="M368.5,92.8c.1-3.1-4.7-6.3-9-6.3s-8.7,2.7-8.7,5.8,4.8,5.7,8.7,5.8S368.3,95.8,368.5,92.8Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="332.5986633300781 43.5"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(253, 124, 110);"
+                                transform="matrix(0,0,0,0,315.59866,43.5)">
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="332.5986633300781 43.5"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(165, 234, 155);"
+                                transform="matrix(0,0,0,0,334.59866,43.5)">
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="350 81.7 350 43.5 382.7 50.7 382.7 89.5"></polyline>
+                                    <path
+                                        d="M350,82.3c0-3.1-4.5-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.6,5.7S349.9,85.5,350,82.3Z">
+                                    </path>
+                                    <path
+                                        d="M382.7,89.9c0-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,5.9,4.7,5.7,8.7,5.7S382.7,93.1,382.7,89.9Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="337.4986267089844 34.599998474121094"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(165, 234, 155);"
+                                transform="matrix(0,0,0,0,341.49863,34.6)">
+                                <polyline points="388.2 73.6 388.2 34.6 354.9 42.6 354.9 82.4"></polyline>
+                                <path
+                                    d="M388.2,74.1c0-3-4.4-5.6-8.1-5.8s-9.2,2.8-9.1,6,4.6,5.6,8.6,5.6S388.2,77.3,388.2,74.1Z">
+                                </path>
+                                <path
+                                    d="M354.9,81.9c0-3.1-4.4-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S354.9,85.1,354.9,81.9Z">
+                                </path>
+                                <line x1="354.9" y1="48.4" x2="388.2" y2="40.3"></line>
+                                <line x1="354.9" y1="54.6" x2="388.2" y2="47"></line>
+                            </g>
+                            <g class="note" data-svg-origin="337.4986267089844 34.599998474121094"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(163, 164, 236);"
+                                transform="matrix(0,0,0,0,341.49863,34.6)">
+                                <polyline points="388.2 73.6 388.2 34.6 354.9 42.6 354.9 82.4"></polyline>
+                                <path
+                                    d="M388.2,74.1c0-3-4.4-5.6-8.1-5.8s-9.2,2.8-9.1,6,4.6,5.6,8.6,5.6S388.2,77.3,388.2,74.1Z">
+                                </path>
+                                <path
+                                    d="M354.9,81.9c0-3.1-4.4-5.7-8.2-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S354.9,85.1,354.9,81.9Z">
+                                </path>
+                                <line x1="354.9" y1="48.4" x2="388.2" y2="40.3"></line>
+                                <line x1="354.9" y1="54.6" x2="388.2" y2="47"></line>
+                            </g>
+                            <g class="note" data-svg-origin="354.29864501953125 33.29999923706055"
+                                style="transform-origin: 0px 0px; opacity: 0.2076; visibility: inherit; stroke: rgb(126, 209, 226);"
+                                transform="matrix(0.48951,0.62312,-0.62312,0.48951,189.95871,-369.37866)">
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="354.29864501953125 33.29999923706055"
+                                style="transform-origin: 0px 0px; opacity: 0.3315; visibility: inherit; stroke: rgb(126, 209, 226);"
+                                transform="matrix(0.66849,0.00329,-0.00329,0.66849,122.6407,-131.85156)">
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M371.8,79.5c0-3.1-4.5-5.8-8.3-5.9s-9.3,2.8-9.2,6,4.7,5.7,8.7,5.7S371.8,82.7,371.8,79.5Z">
+                                    </path>
+                                    <line x1="371.8" y1="79.5" x2="371.8" y2="33.3"></line>
+                                    <path
+                                        d="M371.8,33.4a26.6,26.6,0,0,0,3.6,7.8c3.7,5.7,7.6,7,8.8,11.6.5,1.7.7,4.4-.9,8.3">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                        <g class="table">
+                            <polygon points="25.3 158.5 783.2 293 513 354.9 25.3 158.5"></polygon>
+                            <line x1="25.3" y1="158.5" x2="783.2" y2="293" fill="none" stroke="#8d00fc"
+                                stroke-miterlimit="10" stroke-width="4"></line>
+                            <line x1="783.2" y1="293" x2="25.3" y2="158.5" fill="none"></line>
+                        </g>
+                        <polygon class="laptop-base" points="103.2 263.6 258.9 219.3 636.5 294.4 452.1 339 103.2 263.6">
+                        </polygon>
+                        <g class="laptop-keyboard">
+                            <polygon
+                                points="369.6 265.6 255.3 244.3 255.5 243.5 264.7 241.9 380.9 262.3 380.8 263.1 369.6 265.6">
+                            </polygon>
+                            <polygon
+                                points="235.9 256.4 219.8 253.2 219.9 252.5 228.7 251 245.3 253.4 245.1 254.2 235.9 256.4">
+                            </polygon>
+                            <polygon
+                                points="473.1 303.7 248.4 258.9 248.6 258.1 257.7 256.6 486.2 300.4 486 301.3 473.1 303.7">
+                            </polygon>
+                            <polygon
+                                points="410.3 300.2 202.7 257.5 202.9 256.8 211.4 255.3 422.4 297.1 422.2 298 410.3 300.2">
+                            </polygon>
+                            <polygon
+                                points="448.5 308.1 427 303.7 427.3 302.8 439.2 301.4 461.2 304.9 461 305.8 448.5 308.1">
+                            </polygon>
+                            <polygon
+                                points="200.1 264.7 186 261.7 186.2 261 194.5 259.5 208.9 261.8 208.8 262.5 200.1 264.7">
+                            </polygon>
+                            <polygon
+                                points="221.1 269.1 206.6 266.1 206.8 265.3 215.4 263.9 230.3 266.2 230.1 267 221.1 269.1">
+                            </polygon>
+                            <polygon
+                                points="361.4 298.9 230 271 230.2 270.3 239.2 268.9 372.7 295.9 372.5 296.7 361.4 298.9">
+                            </polygon>
+                            <polygon
+                                points="442.8 279.2 383.7 268.2 383.9 267.3 395.1 265.7 455.4 275.9 455.2 276.7 442.8 279.2">
+                            </polygon>
+                            <polygon
+                                points="524.6 294.4 458.6 282.1 458.8 281.2 471.3 279.7 538.6 291 538.4 291.9 524.6 294.4">
+                            </polygon>
+                            <polygon
+                                points="424.7 312.4 374.6 301.7 374.8 300.9 385.9 299.5 437 309.3 436.8 310.2 424.7 312.4">
+                            </polygon>
+                            <polygon
+                                points="409.1 277.3 397.6 278.8 397.4 279.6 498.4 299.1 511.8 296.7 512 295.8 409.1 277.3">
+                            </polygon>
+                            <polygon
+                                points="394.2 274.5 394.4 273.6 246.7 246.5 237.7 248.1 237.5 248.8 382.8 276.8 394.2 274.5">
+                            </polygon>
+                        </g>
+                        <g class="paw paw-right">
+                            <path class="down"
+                                d="M289.1,181.7c-12.1,9.8-20.6,20.7-20.7,32.1-.2,9,3.8,20.4,13.3,25.2s20.1.6,29.6-3.4c13.4-5.7,23.9-14.6,29.4-21.5"
+                                style="opacity: 0; visibility: hidden;"></path>
+                            <g class="up" style="opacity: 1; visibility: inherit;">
+                                <path
+                                    d="M327.3,170c-.4-1.4-6.3-18.8-23.5-23.5-.8-.2-18.6-4.7-28.9,6.3-8.4,9.1-6,22.5-4.6,30.2a54.3,54.3,0,0,0,8.1,19.9">
+                                </path>
+                                <g class="pads">
+                                    <path
+                                        d="M297.2,154.8c1-.5,2.7-.1,3,.6s-1.4,2.4-2.6,2.1a1.6,1.6,0,0,1-1.1-1.2A1.6,1.6,0,0,1,297.2,154.8Z">
+                                    </path>
+                                    <path
+                                        d="M285.8,159.4c.3-.4,1-1.1,1.7-.8s.9,1.4.8,2.2-1.8,2.1-2.5,1.5S285.2,160.4,285.8,159.4Z">
+                                    </path>
+                                    <path d="M276.9,171c.5-.4,2.7-.3,3.2.6s-.6,1.8-1.4,1.8S276.2,171.6,276.9,171Z">
+                                    </path>
+                                    <path
+                                        d="M296.4,168.6c2.3-.9,6.4,6.3,7.6,9s-5.2,4.5-7.4,6-5.1-6.1-5.9-8.3S293.7,169.8,296.4,168.6Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                        <polygon class="terminal-frame" points="93.8 63.3 284.1 73 335.9 230.5 146.2 197.6 93.8 63.3">
+                        </polygon>
+                        <g class="terminal-code">
+                            <line x1="260.2" y1="92.3" x2="212.2" y2="88.7"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="197.3" y1="87.5" x2="145.2" y2="83.5"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="251" y1="104.2" x2="223.4" y2="101.8"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="209.4" y1="100.5" x2="154.4" y2="95.6"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="256.4" y1="117.9" x2="227.5" y2="114.7"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="215.9" y1="113.4" x2="183.5" y2="109.8"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="169.1" y1="108.2" x2="142.9" y2="105.3"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="275.4" y1="132.8" x2="249.4" y2="129.6"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="234.4" y1="127.8" x2="197.3" y2="123.3"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="185.6" y1="121.9" x2="149.1" y2="117.5"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="261" y1="144.6" x2="244.5" y2="142.5"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="235.5" y1="141.3" x2="214.9" y2="138.7"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="203.4" y1="137.2" x2="180.4" y2="134.3"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="169.3" y1="132.9" x2="155.1" y2="131.1"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="264.7" y1="158.3" x2="221.9" y2="152.1"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="208.2" y1="150.1" x2="191.7" y2="147.7"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="291.3" y1="174.3" x2="268.8" y2="170.9"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="257.8" y1="169.2" x2="226.5" y2="164.4"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="217.3" y1="163" x2="185" y2="158.1"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="173.8" y1="156.4" x2="152.9" y2="153.2"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="278.5" y1="185.6" x2="257.3" y2="182.2"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="243.8" y1="179.9" x2="230.3" y2="177.7"
+                                style="stroke-dashoffset: 0; stroke-dasharray: none;"></line>
+                            <line x1="216.5" y1="175.8" x2="196.7" y2="172.5"
+                                style="stroke-dashoffset: 0; stroke-dasharray: 15.4563px, 4.7168px;"></line>
+                            <line x2="262.1" y2="196.1" x1="280.5" y1="199.2"
+                                style="stroke-dashoffset: 0.001; stroke-dasharray: 0px, 999999px;"></line>
+                            <line x2="213.8" y2="187.9" x1="251.1" y1="194.2"
+                                style="stroke-dashoffset: 0.001; stroke-dasharray: 0px, 999999px;"></line>
+                            <line x2="180.8" y2="182.3" x1="202.7" y1="186"
+                                style="stroke-dashoffset: 0.001; stroke-dasharray: 0px, 999999px;"></line>
+                        </g>
+                        <polygon class="laptop-cover" points="103.2 263.6 452.1 339 360.8 12.4 2 2 103.2 263.6">
+                        </polygon>
+                        <g class="paw paw-left">
+                            <g class="up" style="opacity: 0; visibility: hidden;">
+                                <path
+                                    d="M586.6,208.8c-.6-2.3-4.2-15.6-17.2-22.2-2.7-1.3-12.8-6.4-23.6-1.8s-14.6,16.5-14.8,18.4c-1.2,9-.7,18.4,2.4,26.1,2.4,6,7.5,17.2,9.7,20.2">
+                                </path>
+                                <g class="pads">
+                                    <path
+                                        d="M561.4,194.9a2.7,2.7,0,0,1,3,.5c.4,1-1.4,2.4-2.6,2.2a1.5,1.5,0,0,1-1.1-1.3A1.2,1.2,0,0,1,561.4,194.9Z">
+                                    </path>
+                                    <path
+                                        d="M550.7,200.4c.4-.5,1.1-1.1,1.7-.8a2,2,0,0,1,.8,2.2c-.3,1.2-1.8,2-2.5,1.5S550.1,201.3,550.7,200.4Z">
+                                    </path>
+                                    <path d="M541.1,211.1c.5-.4,2.7-.4,3.2.5s-.6,1.8-1.5,1.9S540.4,211.6,541.1,211.1Z">
+                                    </path>
+                                    <path
+                                        d="M560.6,209.2c2.3-.9,6.4,6.3,7.6,9s-5.3,4.5-7.4,6-5.1-6-5.9-8.3S557.9,210.4,560.6,209.2Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <path class="down"
+                                d="M534.1,231.4c-19.7,6-32.9,18.4-34.2,29.1a30.1,30.1,0,0,0,1.7,14.1,24.8,24.8,0,0,0,6.1,8.8c6,5.1,16.8,4,38-3.9a288.7,288.7,0,0,0,46.5-22.1"
+                                style="opacity: 1; visibility: inherit;"></path>
+                        </g>
+                        <g class="headphone headphone-left">
+                            <g class="speaker">
+                                <path
+                                    d="M609.5,137.3c-17.1,6.3-20.7,51.4-4.5,67.3,1.4,1.5,5.5,5.5,11.3,5.9,8.2.5,14.5-6.3,16.9-8.9,10.1-11,11.5-27.5,8.1-40.1-1.4-4.8-3.9-14-12.7-19.9C627.4,140.8,617.7,134.3,609.5,137.3Z">
+                                </path>
+                                <path
+                                    d="M626.5,196.1c2.7-.4,5.9-2.6,9.3-6,6.6-6.6,6.8-16.6,5.8-24s-4.2-16.1-11.3-19.7a18.7,18.7,0,0,0-10.9-1.9C614,149.3,615.3,192.6,626.5,196.1Z">
+                                </path>
+                                <path d="M631.6,151c-4.5,3.3-.5,27.1,3.8,28.2s6.9-6.6,6.2-13.1S637.4,153.5,631.6,151Z">
+                                </path>
+                            </g>
+                            <path class="band" d="M638.9,157.7c-4-16.8-25.9-61.9-75.3-95.3A155.5,155.5,0,0,0,515,40.6">
+                            </path>
+                        </g>
+                        <g class="music music-left">
+                            <g class="note" data-svg-origin="615.699951171875 119.9000015258789"
+                                style="transform-origin: 0px 0px; opacity: 0.307; visibility: inherit; stroke: rgb(165, 234, 155);"
+                                transform="matrix(0.56381,0.40295,-0.40295,0.56381,364.44757,-340.63721)">
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="597.3999633789062 116.80000305175781"
+                                style="transform-origin: 0px 0px; opacity: 0; visibility: hidden; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0.83867,-0.54464,0.54464,0.83867,75.76458,132.21126)">
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="595.7986450195312 109.4000015258789"
+                                style="transform-origin: 0px 0px; opacity: 0; visibility: hidden; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0.99619,0.08716,-0.08716,0.99619,41.8053,-260.513)">
+                                <polyline points="646.5 148.5 646.5 109.4 613.2 117.4 613.2 157.2"></polyline>
+                                <path
+                                    d="M646.5,149c0-3.1-4.4-5.7-8.1-5.8s-9.2,2.7-9.1,5.9,4.7,5.6,8.6,5.6S646.5,152.1,646.5,149Z">
+                                </path>
+                                <path
+                                    d="M613.2,156.7c.1-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,6,4.7,5.6,8.7,5.6S613.2,159.9,613.2,156.7Z">
+                                </path>
+                                <line x1="613.2" y1="123.2" x2="646.5" y2="115.1"></line>
+                                <line x1="613.2" y1="129.4" x2="646.5" y2="121.8"></line>
+                            </g>
+                            <g class="note" data-svg-origin="619.0999755859375 106.5999984741211"
+                                style="transform-origin: 0px 0px; opacity: 0.4565; visibility: inherit; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0.5253,0.13948,-0.13948,0.5253,265.29713,-149.34365)">
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="615.699951171875 119.9000015258789"
+                                style="transform-origin: 0px 0px; opacity: 0.5849; visibility: inherit; stroke: rgb(255, 97, 216);"
+                                transform="matrix(0.32986,0.25199,-0.25199,0.32986,441.25357,-162.80484)">
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="615.699951171875 119.9000015258789"
+                                style="transform-origin: 0px 0px; opacity: 0.8399; visibility: inherit; stroke: rgb(253, 124, 110);"
+                                transform="matrix(0.13353,-0.08833,0.08833,0.13353,527.62067,124.32483)">
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M633.3,119.9c.6,2,1.3,3.5,3.8,6.3s5.2,4.3,6.5,7.2a6.9,6.9,0,0,1,.7,1.9,10.2,10.2,0,0,1-.7,6.6">
+                                    </path>
+                                    <path
+                                        d="M633.3,119.9a23,23,0,0,0,2.4,11.7c2.4,4.3,5.1,5.4,6.8,9.5a16.9,16.9,0,0,1,.5,11">
+                                    </path>
+                                    <line x1="633.3" y1="121.1" x2="633.3" y2="166.2"></line>
+                                    <path
+                                        d="M633.3,166.2c.2-3.2-4.6-6.3-8.9-6.3s-8.7,2.6-8.7,5.7,4.7,5.7,8.7,5.8S633.1,169.2,633.3,166.2Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="597.3999633789062 116.80000305175781"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0,0,0,0,613.39996,116.8)">
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="597.3999633789062 116.80000305175781"
+                                style="transform-origin: 0px 0px; opacity: 0.8154; visibility: inherit; stroke: rgb(103, 181, 192);"
+                                transform="matrix(0.16848,-0.07544,0.07544,0.16848,518.61673,103.59959)">
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                                <g>
+                                    <polyline points="614.8 155 614.8 116.8 647.5 124 647.5 162.9"></polyline>
+                                    <path
+                                        d="M614.8,155.7c0-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.2,6,4.7,5.6,8.7,5.6S614.8,158.8,614.8,155.7Z">
+                                    </path>
+                                    <path
+                                        d="M647.5,163.3c.1-3.1-4.4-5.7-8.2-5.9s-9.2,2.8-9.1,6,4.7,5.7,8.6,5.7S647.5,166.5,647.5,163.3Z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="595.7986450195312 109.4000015258789"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(255, 97, 216);"
+                                transform="matrix(0,0,0,0,577.79865,109.4)">
+                                <polyline points="646.5 148.5 646.5 109.4 613.2 117.4 613.2 157.2"></polyline>
+                                <path
+                                    d="M646.5,149c0-3.1-4.4-5.7-8.1-5.8s-9.2,2.7-9.1,5.9,4.7,5.6,8.6,5.6S646.5,152.1,646.5,149Z">
+                                </path>
+                                <path
+                                    d="M613.2,156.7c.1-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,6,4.7,5.6,8.7,5.6S613.2,159.9,613.2,156.7Z">
+                                </path>
+                                <line x1="613.2" y1="123.2" x2="646.5" y2="115.1"></line>
+                                <line x1="613.2" y1="129.4" x2="646.5" y2="121.8"></line>
+                            </g>
+                            <g class="note" data-svg-origin="595.7986450195312 109.4000015258789"
+                                style="transform-origin: 0px 0px; opacity: 0; visibility: hidden; stroke: rgb(126, 209, 226);"
+                                transform="matrix(0.9563,0.29237,-0.29237,0.9563,-10.97832,-378.41287)">
+                                <polyline points="646.5 148.5 646.5 109.4 613.2 117.4 613.2 157.2"></polyline>
+                                <path
+                                    d="M646.5,149c0-3.1-4.4-5.7-8.1-5.8s-9.2,2.7-9.1,5.9,4.7,5.6,8.6,5.6S646.5,152.1,646.5,149Z">
+                                </path>
+                                <path
+                                    d="M613.2,156.7c.1-3.1-4.4-5.7-8.2-5.8s-9.3,2.7-9.2,6,4.7,5.6,8.7,5.6S613.2,159.9,613.2,156.7Z">
+                                </path>
+                                <line x1="613.2" y1="123.2" x2="646.5" y2="115.1"></line>
+                                <line x1="613.2" y1="129.4" x2="646.5" y2="121.8"></line>
+                            </g>
+                            <g class="note" data-svg-origin="619.0999755859375 106.5999984741211"
+                                style="transform-origin: 0px 0px; opacity: 1; visibility: inherit; stroke: rgb(126, 209, 226);"
+                                transform="matrix(0,0,0,0,621.09998,106.6)">
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                            </g>
+                            <g class="note" data-svg-origin="619.0999755859375 106.5999984741211"
+                                style="transform-origin: 0px 0px; opacity: 0.0826; visibility: inherit; stroke: rgb(163, 164, 236);"
+                                transform="matrix(0.5303,-0.7486,0.7486,0.5303,259.5205,319.04366)">
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                                <g>
+                                    <path
+                                        d="M636.6,152.9c0-3.2-4.4-5.8-8.2-5.9s-9.3,2.8-9.3,6,4.8,5.7,8.7,5.7S636.6,156.1,636.6,152.9Z">
+                                    </path>
+                                    <line x1="636.6" y1="152.9" x2="636.6" y2="106.6"></line>
+                                    <path
+                                        d="M636.6,106.8a33.2,33.2,0,0,0,3.6,7.8c3.8,5.7,7.6,6.9,8.9,11.5a13.3,13.3,0,0,1-.9,8.4">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+
+
+
+            <!-- Share buttons by Cubecamp.ru  www.cubecamp.ru/articles/share/cubecamp.html -->
+            <div id="shar" class="share-btn" data-url="https://hostrider.com" data-title="Coding kitty"
+                data-desc="the cat that has a habit of singing while coding. Meow...">
+                <!-- <a data-id="vk"><i class="fa fa-vk fa-fw"></i></a> -->
+                <a data-id="tw"><i class="fa fa-twitter fa-fw"></i></a>
+                <a data-id="fb"><i class="fa fa-facebook fa-fw"></i></a>
+                <a data-id="in"><i class="fa fa-linkedin fa-fw"></i></a>
+            </div>
+
+            <p class="foot"><a href="https://hostrider.com/credits.html" target="_blank"
+                    onclick="document.getElementById(&#39;cat-menu&#39;).play();">Credits and attributions</a> / Coding
+                kitty</p>
+
+
+            <script src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/gsap.min.js.下载"></script>
+            <script
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/DrawSVGPlugin.min.js.下载"></script>
+            <script
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/lodash.min.js.下载"></script>
+            <script src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/script.js.下载"></script>
+
+            <!-- toggle -->
+            <script
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/react.production.min.js.下载"></script>
+            <script
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/react-dom.production.min.js.下载"></script>
+            <script
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/MorphSVGPlugin.min.js.下载"></script>
+            <script src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/script.js(1).下载"></script>
+
+            <script type="text/javascript"
+                src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/share.js.下载"></script>
+
+
+
+            <div>
+                <div class="_th-container">
+                    <div class="_th-click-hover _item-input">
+                        x1.00
+                    </div>
+                    <div class="_th-item _item-x2">&gt;</div>
+                    <div class="_th-item _item-x-2">&lt;</div>
+                    <div class="_th-item _item-xx2">&gt;&gt;</div>
+                    <div class="_th-item _item-xx-2">&lt;&lt;</div>
+                    <div class="_th-item _item-reset">O</div>
+                </div>
+                <div class="_th_cover-all-show-times _th_hidden">
+                    <div class="_th_times">x1.00</div>
+                </div>
+            </div>
+        </body>
+    </div>
+</template>
+<script async="" data-apikey="95a3ab66b702dfb752bf1a0b626194" data-cookieless=""
+    src="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/hockeystack.min.js.下载"></script>
+
+  <style type="text/css">
+    ._th-container ._th-item {
+      margin-bottom: 3px;
+      position: relative;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+      opacity: .3;
+      background-color: aquamarine;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 30px;
+      -webkit-transition: all .35s;
+      -o-transition: all .35s;
+      transition: all .35s;
+      right: 30px
+    }
+
+    ._th-container ._th-item,
+    ._th-container ._th-click-hover,
+    ._th_cover-all-show-times ._th_times {
+      -webkit-box-shadow: -3px 4px 12px -5px black;
+      box-shadow: -3px 4px 12px -5px black
+    }
+
+    ._th-container:hover ._th-item._item-x2 {
+      margin-left: 18px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px
+    }
+
+    ._th-container:hover ._th-item._item-x-2 {
+      margin-left: 17px;
+      width: 38px;
+      height: 38px;
+      line-height: 38px
+    }
+
+    ._th-container:hover ._th-item._item-xx2 {
+      width: 36px;
+      height: 36px;
+      margin-left: 16px;
+      line-height: 36px
+    }
+
+    ._th-container:hover ._th-item._item-xx-2 {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      margin-left: 14px
+    }
+
+    ._th-container:hover ._th-item._item-reset {
+      width: 30px;
+      line-height: 30px;
+      height: 30px;
+      margin-left: 10px
+    }
+
+    ._th-click-hover {
+      position: relative;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      height: 45px;
+      width: 45px;
+      cursor: pointer;
+      opacity: .3;
+      border-radius: 100%;
+      background-color: aquamarine;
+      text-align: center;
+      line-height: 45px;
+      right: 0
+    }
+
+    ._th-container:hover {
+      left: -5px
+    }
+
+    ._th-container {
+      font-size: 12px;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      left: -35px;
+      top: 20%;
+      position: fixed;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      z-index: 100000;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    ._th-container ._th-item:hover {
+      opacity: .8;
+      background-color: #5fb492;
+      color: aliceblue
+    }
+
+    ._th-container ._th-item:active {
+      opacity: .9;
+      background-color: #1b3a26;
+      color: aliceblue
+    }
+
+    ._th-container:hover ._th-click-hover {
+      opacity: .8
+    }
+
+    ._th-container:hover ._th-item {
+      opacity: .6;
+      right: 0
+    }
+
+    ._th-container ._th-click-hover:hover {
+      opacity: .8;
+      background-color: #5fb492;
+      color: aliceblue
+    }
+
+    ._th_cover-all-show-times {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99999;
+      opacity: 1;
+      font-weight: 900;
+      font-size: 30px;
+      color: #4f4f4f;
+      background-color: rgba(0, 0, 0, 0.1)
+    }
+
+    ._th_cover-all-show-times._th_hidden {
+      z-index: -99999;
+      opacity: 0;
+      -webkit-transition: 1s all;
+      -o-transition: 1s all;
+      transition: 1s all
+    }
+
+    ._th_cover-all-show-times ._th_times {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: rgba(127, 255, 212, 0.51);
+      text-align: center;
+      line-height: 300px;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      margin-top: -150px;
+      margin-right: -150px
+    }
+  </style>
+  <style type="text/css">
+    #_copy {
+      align-items: center;
+      background: #4494d5;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-size: 13px;
+      height: 30px;
+      justify-content: center;
+      position: absolute;
+      width: 60px;
+      z-index: 1000
+    }
+
+    #select-tooltip,
+    #sfModal,
+    .modal-backdrop,
+    div[id^=reader-helper] {
+      display: none !important
+    }
+
+    .modal-open {
+      overflow: auto !important
+    }
+
+    ._sf_adjust_body {
+      padding-right: 0 !important
+    }
+
+    .super_copy_btns_div {
+      position: fixed;
+      width: 154px;
+      left: 10px;
+      top: 45%;
+      background: #e7f1ff;
+      border: 2px solid #4595d5;
+      font-weight: 600;
+      border-radius: 2px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+      z-index: 5000
+    }
+
+    .super_copy_btns_logo {
+      width: 100%;
+      background: #4595d5;
+      text-align: center;
+      font-size: 12px;
+      color: #e7f1ff;
+      line-height: 30px;
+      height: 30px
+    }
+
+    .super_copy_btns_btn {
+      display: block;
+      width: 128px;
+      height: 28px;
+      background: #7f5711;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 12px;
+      border: 0;
+      outline: 0;
+      margin: 8px auto;
+      font-weight: 700;
+      cursor: pointer;
+      opacity: .9
+    }
+
+    .super_copy_btns_btn:hover {
+      opacity: .8
+    }
+
+    .super_copy_btns_btn:active {
+      opacity: 1
+    }
+  </style>
+   <script async="" data-apikey="95a3ab66b702dfb752bf1a0b626194" data-cookieless=""
+   src="../../public/Coding Cat _ Nyan Cat's cousin who is listening to lo-fi_files/hockeystack.min.js.下载"></script>
+<style scoped>
+    @import ''
+</style>
+   <link rel="icon" href="https://hostrider.com/images/fav/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="https://hostrider.com/images/fav/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://hostrider.com/images/fav/favicon-96x96.png" sizes="96x96" type="image/png">
+  <link rel="icon" href="https://hostrider.com/images/fav/favicon-192x192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://hostrider.com/images/fav/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://hostrider.com/images/fav/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hostrider.com/images/fav/apple-touch-icon-180x180.png">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link rel="stylesheet" href="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/normalize.min.css">
+
+  <!-- cat.css + menu.css + toggle.css -->
+  <link rel="stylesheet" href="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/style.css">
+
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/css">
+  <link rel="stylesheet"
+    href="./Coding Cat _ Nyan Cat&#39;s cousin who is listening to lo-fi_files/font-awesome.min.css">

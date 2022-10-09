@@ -122,7 +122,7 @@
     export default {
         data() {
             return {
-                add: false,
+                addFlag: false,
                 me: "",
                 deptList: '',
                 deptId: '',
@@ -166,24 +166,28 @@
             changeJob() {
                 this.form.workTo = '';
                 this.form.workToEmployee.employeeName = '';
-                this.getEmployeeList();
+                //this.getEmployeeList();
+                this.filterEmployee();
             },
+            //部门变化
             changeDept() {
                 this.form.workTo = '';
                 this.form.workToEmployee.employeeName = '';
-                this.getEmployeeList();
+                //this.getEmployeeList();
+                this.filterEmployee();
             },
+            //
             changeEmployee() {
                 this.getEmployee(this.form.workTo);
-                this.deptId=this.employee.deptId;
-                this.jobId=this.employee.jobId
+                // this.deptId=this.employee.dept.deptId;
+                // this.jobId=this.employee.job.jobId
                 this.selectLoading = true;
             },
             //获取部门列表
             getDept() {
                 this.$axios.get('/dept').then(res => {
                     var r = res.data;
-                    console.log("部门列表：" + r);
+                    console.log("部门列表：" , r);
                     if (!r.success) {
                         //this.wrong(r.errorMsg)
                     } else {
@@ -195,7 +199,7 @@
             getJob() {
                 this.$axios.get('/job').then(res => {
                     var r = res.data;
-                    console.log("职位列表：" + r);
+                    console.log("职位列表：" , r);
                     if (!r.success) {
                         //this.wrong(r.errorMsg)
                     } else {
@@ -203,10 +207,23 @@
                     }
                 })
             },
+            //查找所有员工
+            getAllEmployee() {
+                this.$axios.get('/employee').then(res => {
+                    var r = res.data;
+                    console.log("员工列表：" , r);
+                    if (!r.success) {
+                        //this.wrong(r.errorMsg)
+                    } else {
+                        this.list = r.data;
+                    }
+                })
+            },
+            //按id查员工
             getEmployee(id) {
                 this.$axios.get('/employee/'+id).then(res => {
                     var r = res.data;
-                    console.log("职位列表：" + r);
+                    console.log("职位列表：" , r);
                     if (!r.success) {
                         //this.wrong(r.errorMsg)
                     } else {
@@ -233,7 +250,7 @@
                 console.log(http)
                 this.$axios.get(http).then((response) => {
                     // 处理成功情况
-                    console.log("分页数据：" + response.data.data.current);
+                    console.log("分页数据：{}" , response.data.data.current);
                     var r = response.data;
                     if (!r.success) {
                         this.wrong(r.errorMsg)
@@ -255,15 +272,15 @@
                 }
                 this.$axios.get(http + id).then(res => {
                     var r = res.data;
-                    console.log(r);
                     if (!r.success) {
                         this.wrong(r.errorMsg)
                     } else {
                         this.centerDialogVisible = true;
                         this.form = r.data;
-                        this.deptId = this.form.workToEmployee.deptId;
-                        this.jobId = this.form.workToEmployee.jobId;
-                        this.getEmployeeList();
+                        this.deptId = this.form.workToEmployee.dept.deptId;
+                        this.jobId = this.form.workToEmployee.job.jobId;
+                        //this.getEmployeeList();
+                        this.employeeList=r.data;
                     }
                 })
             },
@@ -341,22 +358,37 @@
                 this.getList();
                 console.log(tab, event);
             },
+            //员工查找匹配
             remoteMethod(query) {
                 if (query !== '') {
                     this.selectLoading = true;
                     setTimeout(() => {
-                        this.selectLoading = false;
-                        /* this.employeeList = this.list.filter(item => {
-                            return item.label.toLowerCase()
-                                .indexOf(query.toLowerCase()) > -1;
-                        }); */
-                        this.getEmployeeList(query);
+                        this.filterEmployee(query);
+                        //按名字查询
+                        //this.getEmployeeList(query);
                     }, 200);
                 } else {
                     this.employeeList = [];
                 }
             },
-            //注入查询员工结果
+            //过滤
+            filterEmployee(query){
+                this.selectLoading = false;
+                var list = this.list;
+                this.employeeList = list.filter(item => {
+                    if(query==''||query==null){
+                        return item.dept.deptId === this.deptId &&
+                        item.job.jobId === this.jobId;
+                    }
+                    
+                    return item.employeeName.toLowerCase()
+                        .indexOf(query.toLowerCase()) > -1 &&
+                        item.dept.deptId === this.deptId &&
+                        item.job.jobId === this.jobId;
+                }); 
+            },
+            //按条件查询员工结果
+            //暂时不需要用到，使用过滤器，减少对数据库的访问量
             getEmployeeList(employeeName) {
                 //axios
 
@@ -372,7 +404,7 @@
                 console.log(http)
                 this.$axios.get(http).then((response) => {
                     // 处理成功情况
-                    console.log("分页数据：" + response.data);
+                    console.log("分页数据：{}" , response.data);
                     var r = response.data;
                     if (!r.success) {
                         this.wrong(r.errorMsg)
@@ -448,7 +480,8 @@
             this.getList();
             this.getDept();
             this.getJob();
-            this.getEmployeeList();
+            this.getAllEmployee();
+            //this.getEmployeeList();
         }
     }
 </script>
